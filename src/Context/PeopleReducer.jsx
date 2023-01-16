@@ -41,11 +41,6 @@ export default function PeopleReducer (state, action) {
                 ...state, 
                 searchValue: action.payload,
             }
-        case 'LOADING':
-            return { 
-                ...state, 
-                loading: action.payload
-            }
         case 'OPEN_ALERT':
             return { 
                 ...state,

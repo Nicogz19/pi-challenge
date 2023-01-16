@@ -8,7 +8,7 @@ const PeopleProvider = (props) => {
     const initialState = {
         characters: [],
         characterToDelete: null,
-        loading: false,
+        loading: true,
         openAlert: false,
         openConfirm: false,
         searchValue: '',
@@ -20,8 +20,6 @@ const PeopleProvider = (props) => {
     const [state, dispatch] = useReducer(PeopleReducer, initialState)
 
     const getCharacters = async () => {
-
-        dispatch({type: 'LOADING', payload: true})
 
         await axios.get('https://swapi.dev/api/people')
         .then(response => {
